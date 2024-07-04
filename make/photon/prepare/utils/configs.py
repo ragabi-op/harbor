@@ -130,6 +130,9 @@ def parse_yaml_config(config_file_path, with_trivy):
         config_dict['cert_path'] = https_config["certificate"]
         config_dict['cert_key_path'] = https_config["private_key"]
 
+    if configs.get('oidc_redirect_url'):
+        config_dict['oidc_redirect_url'] = configs.get('oidc_redirect_url')
+
     if configs.get('external_url'):
         config_dict['public_url'] = configs.get('external_url')
     else:
@@ -303,7 +306,7 @@ def parse_yaml_config(config_file_path, with_trivy):
     # for compatibility, user could configure the strong_ssl_ciphers either in https section or under internal_tls section,
     # but it is more reasonable to configure it in https_config
     if https_config:
-        config_dict['strong_ssl_ciphers'] = https_config.get('strong_ssl_ciphers') 
+        config_dict['strong_ssl_ciphers'] = https_config.get('strong_ssl_ciphers')
     else:
         config_dict['strong_ssl_ciphers'] = False
 

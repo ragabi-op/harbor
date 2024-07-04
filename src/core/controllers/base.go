@@ -75,7 +75,7 @@ func (cc *CommonController) Login() {
 	principal := cc.GetString("principal")
 	password := cc.GetString("password")
 	if redirectForOIDC(cc.Ctx.Request.Context(), principal) {
-		ep, err := config.ExtEndpoint()
+		ep, err := config.OidcRedirectURL()
 		if err != nil {
 			log.Errorf("Failed to get the external endpoint, error: %v", err)
 			cc.CustomAbort(http.StatusUnauthorized, "")

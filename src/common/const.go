@@ -48,6 +48,7 @@ const (
 	ResourceTypeImage      = "i"
 
 	ExtEndpoint                      = "ext_endpoint"
+	OidcRedirectURL                  = "oidc_redirect_url"
 	AUTHMode                         = "auth_mode"
 	PrimaryAuthMode                  = "primary_auth_mode"
 	DatabaseType                     = "database_type"
