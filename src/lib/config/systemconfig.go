@@ -151,6 +151,9 @@ func WithTrivy() bool {
 func ExtEndpoint() (string, error) {
 	return DefaultMgr().Get(backgroundCtx, common.ExtEndpoint).GetString(), nil
 }
+func OidcRedirectURL() (string, error) {
+	return DefaultMgr().Get(backgroundCtx, common.OidcRedirectURL).GetString(), nil
+}
 
 // ExtURL returns the external URL: host:port
 func ExtURL() (string, error) {
